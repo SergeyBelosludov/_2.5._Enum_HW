@@ -10,7 +10,7 @@ public class Main {
                     "Автомобиль " + i,
                     "№" + i,
                     1.8,
-                    driverB);
+                    driverB, CarCase.SEDAN);
 
             DriverD driverD = new DriverD("Водитель кат.D № " + i,
                     true,
@@ -19,7 +19,7 @@ public class Main {
                     "Автобус марка " + i,
                     "№" + i,
                     3.0,
-                    driverD);
+                    driverD, BusCapacityByNumberOfSeats.MEDIUM);
 
             DriverС driverC = new DriverС("Водитель кат.C № " + i,
                     true,
@@ -28,7 +28,7 @@ public class Main {
                     "Грузовик марка " + i,
                     "№" + i,
                     4.0,
-                    driverC);
+                    driverC, LoadCapacityOfTruck.N1);
 
             printInfo(car);
             printInfo(bus);
@@ -37,6 +37,13 @@ public class Main {
     }
 
     public static void printInfo(Transport<?> transport) {
-        System.out.println("Водитель " + transport.getDriver().getFullName() + " управляет автомобилем " + transport.getModel() + " и будет участвовать в заезде");
+        System.out.println(
+                "Водитель " +
+                transport.getDriver().getFullName() +
+                " управляет автомобилем "
+                + transport.getModel() +
+                " и будет участвовать в заезде"
+        );
+        transport.printType();
     }
 }

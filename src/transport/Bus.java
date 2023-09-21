@@ -1,12 +1,23 @@
 package transport;
 
 public class Bus extends Transport<DriverD> {
+    private BusCapacityByNumberOfSeats busCapacityByNumberOfSeats;
+
+    public BusCapacityByNumberOfSeats getBusCapacityByNumberOfSeats() {
+        return busCapacityByNumberOfSeats;
+    }
+
+    public void setBusCapacityByNumberOfSeats(BusCapacityByNumberOfSeats busCapacityByNumberOfSeats) {
+        this.busCapacityByNumberOfSeats = busCapacityByNumberOfSeats;
+    }
 
     public Bus(String brand,
                String model,
                double engineVolume,
-               DriverD driver) {
+               DriverD driver,
+               BusCapacityByNumberOfSeats busCapacityByNumberOfSeats) {
         super(brand, model, engineVolume, driver);
+        this.busCapacityByNumberOfSeats = busCapacityByNumberOfSeats;
     }
 
     @Override
@@ -21,6 +32,15 @@ public class Bus extends Transport<DriverD> {
         System.out.println("Автобус закончил движение (марки " + getBrand() +
                 " модели " + getModel() +
                 " с объемом двигателя " + getEngineVolume() + ")");
+    }
+
+    @Override
+    public void printType() {
+        if (busCapacityByNumberOfSeats == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println("Вместимость авто: " + busCapacityByNumberOfSeats);
+        }
     }
 
     @Override
