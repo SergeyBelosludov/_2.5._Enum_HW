@@ -5,9 +5,9 @@ public enum LoadCapacityOfTruck {
     N2(3.5F, 12F),
     N3(12F, null);
 
-    private Float from;
+    private final Float from;
 
-    private Float to;
+    private final Float to;
 
     LoadCapacityOfTruck(Float from, Float to) {
         this.from = from;
@@ -16,9 +16,10 @@ public enum LoadCapacityOfTruck {
 
     @Override
     public String toString() {
-        if (from == null) {
-            return "Грузоподъемность: до " + to + " тонн";
-        } else if (to == null) {
+//        if (from == null) {
+//            return "Грузоподъемность: до " + to + " тонн";
+//        } else
+        if (to == null) {
             return "Грузоподъемность: от " + from + " тонн";
         }
         else {
@@ -34,11 +35,11 @@ public enum LoadCapacityOfTruck {
         return to;
     }
 
-    public void setFrom(Float from) {
-        this.from = from;
-    }
+//    public void setFrom(Float from) {
+//        this.from = from;
+//    }
 
-    public void setTo(Float to) {
-        this.to = to;
-    }
+//    public void setTo(Float to) {
+//        this.to = to;
+//    }
 }

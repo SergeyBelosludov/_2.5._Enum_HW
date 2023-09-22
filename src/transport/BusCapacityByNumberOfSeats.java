@@ -7,8 +7,8 @@ public enum BusCapacityByNumberOfSeats {
     LARGE(60, 80),
     EXTRA_LARGE(100, 120);
 
-    private Integer from;
-    private Integer to;
+    private final int from;
+    private final int to;
 
     BusCapacityByNumberOfSeats(Integer from, Integer to) {
         this.from = from;
@@ -17,14 +17,11 @@ public enum BusCapacityByNumberOfSeats {
 
     @Override
     public String toString() {
-        if (from == null) {
-            return "Вместимость до " + to + " мест";
-        } else if (to == null) {
-            return "Вместимость от " + from + " мест";
-        }
-        else {
+//        if (to == null) {
+//            return "Вместимость от " + from + " мест";
+//        } else {
             return "Вместимость " + from + " - " + to + " мест";
-        }
+//        }
     }
 
     public Integer getFrom() {
@@ -35,11 +32,11 @@ public enum BusCapacityByNumberOfSeats {
         return to;
     }
 
-    public void setFrom(Integer from) {
-        this.from = from;
-    }
-
-    public void setTo(Integer to) {
-        this.to = to;
-    }
+//    public void setFrom(int from) {
+//        this.from = from;
+//    }
+//
+//    public void setTo(int to) {
+//        this.to = to;
+//    }
 }

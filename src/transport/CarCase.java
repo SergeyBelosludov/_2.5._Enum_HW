@@ -11,7 +11,7 @@ public enum CarCase {
     VAN("Фургон"),
     MINIVAN("Минивэн");
 
-    private String carCase;
+    private final String carCase;
 
     @Override
     public String toString() {
@@ -22,9 +22,9 @@ public enum CarCase {
         return carCase;
     }
 
-    public void setCarCase(String carCase) {
-        this.carCase = carCase;
-    }
+//    public void setCarCase(String carCase) {
+//        this.carCase = carCase;
+//    }
 
     CarCase(String carCase) {
         this.carCase = carCase;
