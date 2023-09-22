@@ -7,8 +7,8 @@ public enum BusCapacityByNumberOfSeats {
     LARGE(60, 80),
     EXTRA_LARGE(100, 120);
 
-    private Integer from;
-    private Integer to;
+    private final int from;
+    private final int to;
 
     BusCapacityByNumberOfSeats(Integer from, Integer to) {
         this.from = from;
