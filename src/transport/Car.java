@@ -1,12 +1,23 @@
 package transport;
 
 public class Car extends Transport<DriverB> {
+    private CarCase carCase;
+
+    public CarCase getCarCase() {
+        return carCase;
+    }
+
+    public void setCarCase(CarCase carCase) {
+        this.carCase = carCase;
+    }
 
     public Car(String brand,
                String model,
                double engineVolume,
-               DriverB driver) {
+               DriverB driver,
+               CarCase carCase) {
         super(brand, model, engineVolume, driver);
+        this.carCase = carCase;
     }
 
     @Override
@@ -21,6 +32,15 @@ public class Car extends Transport<DriverB> {
         System.out.println("Автомобиль закончил движение (марки " + getBrand() +
                 " модели " + getModel() +
                 " с объемом двигателя " + getEngineVolume() + ")");
+    }
+
+    @Override
+    public void printType() {
+        if (carCase == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        } else {
+            System.out.println("Тип кузова авто: " + carCase);
+        }
     }
 
     @Override
